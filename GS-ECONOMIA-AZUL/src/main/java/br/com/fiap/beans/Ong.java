@@ -23,6 +23,11 @@ public class Ong {
 	public void setAreaAtuacao(String areaAtuacao) {
 		this.areaAtuacao = areaAtuacao;
 	}
+
+	@Override
+	public String toString() {
+		return "nome: \n" + nome + "areaAtuacao: \n" + areaAtuacao ;
+	}
 	
 	
 	
