@@ -1,4 +1,4 @@
-package br.com.fiap.conexao;
+package br.com.economiaazul.conexao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

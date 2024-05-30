@@ -1,4 +1,4 @@
-package br.com.fiap.exceptions;
+package br.com.economiaazul.exceptions;
 
 public class DatabaseException extends ContatoException {
 	

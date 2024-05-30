@@ -1,13 +1,13 @@
-package br.com.fiap.dao;
+package br.com.economiaazul.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.fiap.beans.Contato;
-import br.com.fiap.conexao.ConnectFactory;
-import br.com.fiap.exceptions.DatabaseException;
+import br.com.economiaazul.beans.Contato;
+import br.com.economiaazul.conexao.ConnectFactory;
+import br.com.economiaazul.exceptions.DatabaseException;
 
 public class ContatoDAO {
 
@@ -31,7 +31,7 @@ public class ContatoDAO {
 			statement.execute();
 			statement.close();
 
-			return "Cadastrado com Sucesso";
+			return "\nCadastrado com Sucesso";
 		} catch (SQLException e) {
 			throw new DatabaseException("Erro no cadastro", e);
 		}
@@ -70,7 +70,7 @@ public class ContatoDAO {
 			statement.close();
 
 			if (rowsUpdated > 0) {
-				return "Contato atualizado com sucesso";
+				return "\nContato atualizado com sucesso";
 			} else {
 				return "Contato não encontrado";
 			}

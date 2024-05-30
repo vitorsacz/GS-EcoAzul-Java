@@ -1,4 +1,4 @@
-package br.com.fiap.menu;
+package br.com.economiaazul.menu;
 
 import java.util.ArrayList;
 import java.util.List;

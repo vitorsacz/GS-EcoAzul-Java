@@ -1,12 +1,13 @@
-package br.com.fiap.menu;
+package br.com.economiaazul.menu;
 
 import java.util.Scanner;
+import java.util.UUID;
 
-import br.com.fiap.beans.Contato;
-import br.com.fiap.dao.ContatoDAO;
-import br.com.fiap.exceptions.DatabaseException;
+import br.com.economiaazul.beans.Contato;
+import br.com.economiaazul.dao.ContatoDAO;
+import br.com.economiaazul.exceptions.DatabaseException;
 
-public class ContatoSelecionar {
+public class ContatoInserir {
 
 	public Contato exibirMenu() throws Exception {
 
@@ -15,9 +16,6 @@ public class ContatoSelecionar {
 		System.out.println("\n====================");
 		System.out.println("-------CONTATO-----");
 		System.out.println("====================\n");
-
-		System.out.println("Informe o ID: ");
-		String idContato = scanner.nextLine();
 
 		System.out.println("Informe o nome: ");
 		String nome = scanner.nextLine();
@@ -30,22 +28,18 @@ public class ContatoSelecionar {
 
 		Contato contato = new Contato();
 
-		contato.setIdContato(idContato);
+		contato.setIdContato(UUID.randomUUID().toString());
 		contato.setNome(nome);
 		contato.setEmail(email);
 		contato.setTelefone(telefone);
 
 		try {
 			ContatoDAO contatoDAO = new ContatoDAO();
-			contato = contatoDAO.selecionar(idContato);
-			if (contato != null) {
-				System.out.println("Contato encontrado: \n" + contato.toString());
-			} else {
-				System.out.println("Contato não encontrado.");
-			}
+			String resultado = contatoDAO.inserir(contato);
+			System.out.println(resultado);
 		} catch (ClassNotFoundException | DatabaseException e) {
 			e.printStackTrace();
-			System.out.println("ERRO AO SELECIONAR CONTATO: " + e.getMessage());
+			System.out.println("ERRO NO CADASTRO DE CONTATO: " + e.getMessage());
 		}
 
 		System.out.println("\n" + contato.toString());

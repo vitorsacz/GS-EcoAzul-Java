@@ -1,4 +1,4 @@
-package br.com.fiap.menu;
+package br.com.economiaazul.menu;
 
 public interface Display {
 	

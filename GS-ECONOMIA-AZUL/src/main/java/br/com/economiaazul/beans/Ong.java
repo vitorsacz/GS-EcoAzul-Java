@@ -1,4 +1,4 @@
-package br.com.fiap.beans;
+package br.com.economiaazul.beans;
 
 public class Ong {
 	

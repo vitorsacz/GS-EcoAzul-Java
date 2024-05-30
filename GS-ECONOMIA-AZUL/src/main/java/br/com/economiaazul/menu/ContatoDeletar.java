@@ -1,10 +1,10 @@
-package br.com.fiap.menu;
+package br.com.economiaazul.menu;
 
 import java.util.Scanner;
 
-import br.com.fiap.beans.Contato;
-import br.com.fiap.dao.ContatoDAO;
-import br.com.fiap.exceptions.DatabaseException;
+import br.com.economiaazul.beans.Contato;
+import br.com.economiaazul.dao.ContatoDAO;
+import br.com.economiaazul.exceptions.DatabaseException;
 
 public class ContatoDeletar {
 

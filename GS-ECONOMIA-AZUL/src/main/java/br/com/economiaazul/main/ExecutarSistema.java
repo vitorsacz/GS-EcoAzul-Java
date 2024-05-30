@@ -1,6 +1,6 @@
-package br.com.fiap.main;
+package br.com.economiaazul.main;
 
-import br.com.fiap.menu.DisplayMenu;
+import br.com.economiaazul.menu.DisplayMenu;
 
 public class ExecutarSistema {
 
