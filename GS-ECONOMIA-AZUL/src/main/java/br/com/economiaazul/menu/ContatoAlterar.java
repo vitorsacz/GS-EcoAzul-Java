@@ -28,12 +28,10 @@ public class ContatoAlterar {
 		String telefone = scanner.nextLine();
 
 		System.out.println("Informe o ID: ");
-		;
 		String idContato = scanner.nextLine();
 
 		Contato contato = new Contato();
 
-		contato.setIdContato(UUID.randomUUID().toString());
 		contato.setNome(nome);
 		contato.setEmail(email);
 		contato.setTelefone(telefone);

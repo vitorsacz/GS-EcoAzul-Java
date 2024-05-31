@@ -39,7 +39,6 @@ public class ViaCepService {
             Endereco endereco = new Endereco();
             endereco.setCep(cep);
             endereco.setLougradouro(jsonObject.get("logradouro").getAsString());
-            endereco.setComplemento(jsonObject.get("complemento").getAsString());
             endereco.setBairro(jsonObject.get("bairro").getAsString());
             endereco.setLocalidade(jsonObject.get("localidade").getAsString());
             endereco.setUf(jsonObject.get("uf").getAsString());

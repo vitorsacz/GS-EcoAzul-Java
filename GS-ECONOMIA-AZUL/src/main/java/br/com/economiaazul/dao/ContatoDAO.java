@@ -66,10 +66,10 @@ public class ContatoDAO {
 			statement.setString(3, contato.getTelefone());
 			statement.setString(4, contato.getIdContato());
 
-			int rowsUpdated = statement.executeUpdate();
+			int Updated = statement.executeUpdate();
 			statement.close();
 
-			if (rowsUpdated > 0) {
+			if (Updated > 0) {
 				return "\nContato atualizado com sucesso";
 			} else {
 				return "Contato não encontrado";

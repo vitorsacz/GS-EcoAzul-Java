@@ -41,17 +41,20 @@ public class MenuEndereco {
 
 	                case "2":
 	                    System.out.println("\nOpção escolhida: Deletar Endereço");
-	                  
+	                    EnderecoDeletar enderecoDeletar = new EnderecoDeletar();
+	                    enderecoDeletar.exibirMenu();
 	                    break;
 
 	                case "3":
 	                    System.out.println("\nOpção escolhida: Alterar Endereço");
-	                  
+	                    EnderecoAlterar enderecoAlterar = new EnderecoAlterar();
+	                    enderecoAlterar.exibirMenu();
 	                    break;
 
 	                case "4":
 	                    System.out.println("\nOpção escolhida: Selecionar Endereço");
-	               
+	                    EnderecoSelecionar enderecoSelecionar = new EnderecoSelecionar();
+	                    enderecoSelecionar.exibirMenu();
 	                    break;
 
 	                default:

@@ -5,7 +5,6 @@ public class Endereco {
 	private String idEndereco;
 	private String cep;
 	private String lougradouro;
-	private String complemento;
 	private String bairro;
 	private String localidade;
 	private String uf;
@@ -16,13 +15,12 @@ public class Endereco {
 	}
 
 	
-	public Endereco(String idEndereco, String cep, String lougradouro, String complemento, String bairro,
+	public Endereco(String idEndereco, String cep, String lougradouro, String bairro,
 			String localidade, String uf) {
 		super();
 		this.idEndereco = idEndereco;
 		this.cep = cep;
 		this.lougradouro = lougradouro;
-		this.complemento = complemento;
 		this.bairro = bairro;
 		this.localidade = localidade;
 		this.uf = uf;
@@ -58,13 +56,6 @@ public class Endereco {
 		this.lougradouro = lougradouro;
 	}
 
-	public String getComplemento() {
-		return complemento;
-	}
-
-	public void setComplemento(String complemento) {
-		this.complemento = complemento;
-	}
 
 	public String getBairro() {
 		return bairro;
@@ -94,7 +85,7 @@ public class Endereco {
 
 	@Override
 	public String toString() {
-		return "ID: " + idEndereco + "\ncep: " + cep + "\nlougradouro: " + lougradouro + "\ncomplemento: " + complemento + "\nbairro: "
+		return "ID: " + idEndereco + "\ncep: " + cep + "\nlougradouro: " + lougradouro +  "\nbairro: "
 				+ bairro + "\nlocalidade: " + localidade + "\nuf: " + uf ;
 	}
 	
