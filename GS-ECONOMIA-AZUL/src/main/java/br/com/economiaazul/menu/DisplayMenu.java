@@ -39,8 +39,9 @@ public class DisplayMenu implements Display {
 				break;
 				
 			case "2":
+				MenuEndereco enderecoDisplay = new MenuEndereco();
+				enderecoDisplay.exibir();
 				break;
-				
 			case "3":
 				break;
 

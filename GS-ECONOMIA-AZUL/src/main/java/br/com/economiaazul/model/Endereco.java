@@ -2,35 +2,45 @@ package br.com.economiaazul.model;
 
 public class Endereco {
 	
+	private String idEndereco;
 	private String cep;
 	private String lougradouro;
 	private String complemento;
 	private String bairro;
 	private String localidade;
 	private String uf;
-	private String ibge;
-	private String gia;
-	private String ddd;
-	private String siafi;
+
 
 	public Endereco() {
 		super();
 	}
 
-	public Endereco(String cep, String lougradouro, String complemento, String bairro, String localidade, String uf,
-			String ibge, String gia, String ddd, String siafi) {
+	
+	public Endereco(String idEndereco, String cep, String lougradouro, String complemento, String bairro,
+			String localidade, String uf) {
 		super();
+		this.idEndereco = idEndereco;
 		this.cep = cep;
 		this.lougradouro = lougradouro;
 		this.complemento = complemento;
 		this.bairro = bairro;
 		this.localidade = localidade;
 		this.uf = uf;
-		this.ibge = ibge;
-		this.gia = gia;
-		this.ddd = ddd;
-		this.siafi = siafi;
 	}
+	
+	
+	
+
+
+	public String getIdEndereco() {
+		return idEndereco;
+	}
+
+
+	public void setIdEndereco(String idEndereco) {
+		this.idEndereco = idEndereco;
+	}
+
 
 	public String getCep() {
 		return cep;
@@ -80,43 +90,12 @@ public class Endereco {
 		this.uf = uf;
 	}
 
-	public String getIbge() {
-		return ibge;
-	}
 
-	public void setIbge(String ibge) {
-		this.ibge = ibge;
-	}
-
-	public String getGia() {
-		return gia;
-	}
-
-	public void setGia(String gia) {
-		this.gia = gia;
-	}
-
-	public String getDdd() {
-		return ddd;
-	}
-
-	public void setDdd(String ddd) {
-		this.ddd = ddd;
-	}
-
-	public String getSiafi() {
-		return siafi;
-	}
-
-	public void setSiafi(String siafi) {
-		this.siafi = siafi;
-	}
 
 	@Override
 	public String toString() {
-		return "\ncep: " + cep + "\nlougradouro: " + lougradouro + "\ncomplemento: " + complemento + "\nbairro: "
-				+ bairro + "\nlocalidade: " + localidade + "\nuf: " + uf + "\nibge: " + ibge + "\ngia: " + gia
-				+ "\nddd: " + ddd + "\nsiafi: " + siafi;
+		return "ID: " + idEndereco + "\ncep: " + cep + "\nlougradouro: " + lougradouro + "\ncomplemento: " + complemento + "\nbairro: "
+				+ bairro + "\nlocalidade: " + localidade + "\nuf: " + uf ;
 	}
 	
 	
