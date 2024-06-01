@@ -43,6 +43,8 @@ public class DisplayMenu implements Display {
 				enderecoDisplay.exibir();
 				break;
 			case "3":
+				ListaOng menuOng = new ListaOng();
+				menuOng.exibir();
 				break;
 
 			default:

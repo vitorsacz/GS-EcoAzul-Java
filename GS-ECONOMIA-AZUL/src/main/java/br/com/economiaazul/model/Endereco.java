@@ -26,9 +26,6 @@ public class Endereco {
 		this.uf = uf;
 	}
 	
-	
-	
-
 
 	public String getIdEndereco() {
 		return idEndereco;
