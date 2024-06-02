@@ -1,23 +1,14 @@
 package br.com.economiaazul.resource;
 
-import java.sql.SQLException;
-import java.util.List;
-
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.Context;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import javax.ws.rs.core.UriBuilder;
-import javax.ws.rs.core.UriInfo;
-
 import br.com.economiaazul.beans.Ong;
 import br.com.economiaazul.bo.OngBO;
-import br.com.economiaazul.exceptions.EnderecoDatabase;
 import br.com.economiaazul.service.OngService;
+import com.google.gson.Gson;
+import jakarta.ws.rs.*;
+import jakarta.ws.rs.core.*;
+
+import java.sql.SQLException;
+import java.util.List;
 
 @Path("/ongs")
 public class OngResource {
@@ -31,10 +22,26 @@ public class OngResource {
     }
 
     @GET
+    @Path("/teste")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String getIt() {
+        return "Testando API com JAVA RX - Keven manézão";
+    }
+
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response listarOngs() {
-        List<Ong> listaOngs = ongService.listarOngs();
-        return Response.ok(listaOngs).build();
+        List<Ong> listaOngs = null;
+        try {
+            listaOngs = ongService.listarOngs();
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+
+        Gson gson = new Gson();
+        String json = gson.toJson(listaOngs);
+
+        return Response.ok(json).build();
     }
 
     @POST

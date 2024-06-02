@@ -3,6 +3,7 @@ C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\eco
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\service\OngService.java
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\beans\Ong.java
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\menu\ListaOng.java
+C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\Main.java
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\menu\DisplayMenu.java
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\model\Endereco.java
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\dao\EnderecoDAO.java
@@ -29,4 +30,5 @@ C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\eco
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\conexao\ConnectFactory.java
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\menu\MenuEndereco.java
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\exceptions\EnderecoValidation.java
+C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\JAXRSConfiguration.java
 C:\Users\Keven\Desktop\GS-EcoAzul-Java\GS-ECONOMIA-AZUL\src\main\java\br\com\economiaazul\menu\EnderecoInserir.java
