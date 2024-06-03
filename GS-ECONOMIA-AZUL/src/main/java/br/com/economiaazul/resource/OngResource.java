@@ -25,7 +25,7 @@ public class OngResource {
     @Path("/teste")
     @Produces(MediaType.TEXT_PLAIN)
     public String getIt() {
-        return "Testando API com JAVA RX - Keven manézão";
+        return "Testando API";
     }
 
     @GET
