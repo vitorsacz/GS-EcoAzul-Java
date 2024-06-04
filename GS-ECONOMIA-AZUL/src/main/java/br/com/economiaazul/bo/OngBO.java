@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import br.com.economiaazul.beans.Ong;
 import br.com.economiaazul.dao.OngDAO;
+import br.com.economiaazul.exceptions.EnderecoDatabase;
 
 public class OngBO {
 	
@@ -13,7 +14,7 @@ public class OngBO {
 	        this.ongDAO = new OngDAO();
 	    }
 	 
-	 public void inserirBO(Ong ong) throws Exception  {
+	 public void inserirBO(Ong ong) throws EnderecoDatabase {
 		 ongDAO.inserir(ong);
 	 }
 	

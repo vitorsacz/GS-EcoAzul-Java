@@ -16,6 +16,7 @@ public class OngResource {
     private OngService ongService;
     private OngBO ongBO;
 
+
     public OngResource() throws ClassNotFoundException, SQLException {
         this.ongService = new OngService();
         this.ongBO = new OngBO();

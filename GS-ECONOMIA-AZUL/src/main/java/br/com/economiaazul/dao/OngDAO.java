@@ -13,8 +13,6 @@ import br.com.economiaazul.conexao.ConnectFactory;
 import br.com.economiaazul.exceptions.EnderecoDatabase;
 
 public class OngDAO {
-	
-	  public Connection minhaConexao;
 
 	public List<Ong> listarOngs() {
 		List<Ong> listaOngs = new ArrayList<>();
@@ -64,26 +62,41 @@ public class OngDAO {
 		}
 		return listaOngs;
 	}
-	
-	
-	  public String inserir(Ong ong) throws EnderecoDatabase {
-	        PreparedStatement statement;
-	        try {
-	        	statement = minhaConexao.prepareStatement(
-	                    "INSERT INTO t_gs_endereco(nome, pais, estado, alterarAtuacao) " +
-	                    "VALUES (?, ?, ?, ?)");
-	            
-	        	statement.setString(1, ong.getNome());
-	        	statement.setString(2, ong.getPais());
-	        	statement.setString(3, ong.getEstado());
-	        	statement.setString(4, ong.getAreaAtuacao());
-	        	statement.execute();
-	        	statement.close();
 
-	            return "\nCadastrado com Sucesso";
-	        } catch (SQLException e) {
-	            throw new EnderecoDatabase("Erro no cadastro", e);
-	        }
-	    }
-	    
+	public String inserir(Ong ong) throws EnderecoDatabase {
+		Connection minhaConexao = null;
+		PreparedStatement statement = null;
+		try {
+			// Obtém a conexão
+			ConnectFactory factory = new ConnectFactory();
+			minhaConexao = factory.conexao();
+
+			// Prepara a query SQL
+			statement = minhaConexao.prepareStatement(
+					"INSERT INTO T_GS_ONG(nome, pais, estado, areaAtuacao) VALUES (?, ?, ?, ?)");
+
+			// Define os parâmetros da query
+			statement.setString(1, ong.getNome());
+			statement.setString(2, ong.getPais());
+			statement.setString(3, ong.getEstado());
+			statement.setString(4, ong.getAreaAtuacao());
+
+			// Executa a query
+			statement.executeUpdate();
+
+			return "\nCadastrado com Sucesso";
+		} catch (SQLException | ClassNotFoundException e) {
+			throw new EnderecoDatabase("Erro no cadastro", e);
+		} finally {
+			// Fecha os recursos
+			try {
+				if (statement != null)
+					statement.close();
+				if (minhaConexao != null)
+					minhaConexao.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
