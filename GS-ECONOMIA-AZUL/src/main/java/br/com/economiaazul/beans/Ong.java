@@ -6,19 +6,25 @@ public class Ong {
 	private String nome;
 	private String pais;
 	private String estado;
-	private String areaAtuacao;		
+	private String areaAtuacao;
+	private int materialColetado;
+
+	private String imagem;
+
 	
 	public Ong() {
 		super();
 	}
 
-	public Ong(String idOng, String nome, String pais, String estado, String areaAtuacao) {
+	public Ong(String idOng, String nome, String pais, String estado, String areaAtuacao, int materialColetado, String imagem) {
 		super();
 		this.idOng = idOng;
 		this.nome = nome;
 		this.pais = pais;
 		this.estado = estado;
 		this.areaAtuacao = areaAtuacao;
+		this.materialColetado = materialColetado;
+		this.imagem = imagem;
 	}
 	
 	
@@ -53,10 +59,26 @@ public class Ong {
 		this.areaAtuacao = areaAtuacao;
 	}
 
+	public int getMaterialColetado() {
+		return materialColetado;
+	}
+
+	public void setMaterialColetado(int materialColetado) {
+		this.materialColetado = materialColetado;
+	}
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
 	@Override
 	public String toString() {
 		return "\nidOng: " + idOng + "\nnome: " + nome + "\npais: " + pais + "\nestado: " + estado + "\nareaAtuacao: "
-				+ areaAtuacao ;
+				+ areaAtuacao +  "\nMaterial Coletado: " + materialColetado + "\nImagem: " + imagem ;
 	}
 
 }

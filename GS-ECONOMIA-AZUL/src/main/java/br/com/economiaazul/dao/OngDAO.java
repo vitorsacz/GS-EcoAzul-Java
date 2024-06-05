@@ -41,8 +41,11 @@ public class OngDAO {
 				String pais = resultado.getString("pais");
 				String estado = resultado.getString("estado");
 				String areaAtuacao = resultado.getString("areaAtuacao");
+				int materialColetado = Integer.parseInt(resultado.getString("materialColetado"));
+				String imagem = resultado.getString("imagem");
 
-				Ong ong = new Ong(idOng, nome, pais, estado, areaAtuacao);
+
+				Ong ong = new Ong(idOng, nome, pais, estado, areaAtuacao, materialColetado, imagem);
 				listaOngs.add(ong);
 			}
 		} catch (ClassNotFoundException | SQLException e) {
