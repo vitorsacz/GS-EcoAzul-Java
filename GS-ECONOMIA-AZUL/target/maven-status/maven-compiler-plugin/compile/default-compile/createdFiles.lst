@@ -20,7 +20,6 @@ br\com\economiaazul\menu\EnderecoDeletar.class
 br\com\economiaazul\exceptions\ContatoException.class
 br\com\economiaazul\menu\EnderecoSelecionar.class
 br\com\economiaazul\bo\OngBO.class
-br\com\economiaazul\model\Endereco.class
 br\com\economiaazul\menu\ContatoAlterar.class
 br\com\economiaazul\menu\Display.class
 br\com\economiaazul\menu\EnderecoInserir.class
