@@ -3,7 +3,6 @@ package br.com.economiaazul.beans;
 public class Contato {
 	
 	private String idContato;
-	private String nome;
 	private String email;
 	private String telefone;
 	
@@ -12,10 +11,9 @@ public class Contato {
 	}
 
 	
-	public Contato(String idContato, String nome, String email, String telefone) {
+	public Contato(String idContato, String email, String telefone) {
 		super();
 		this.idContato = idContato;
-		this.nome = nome;
 		this.email = email;
 		this.telefone = telefone;
 	}
@@ -30,17 +28,6 @@ public class Contato {
 	public void setIdContato(String idContato) {
 		this.idContato = idContato;
 	}
-
-
-	public String getNome() {
-		return nome;
-	}
-
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 
 	public String getEmail() {
 		return email;
@@ -64,7 +51,7 @@ public class Contato {
 
 	@Override
 	public String toString() {
-		return "Numero do ID: " + idContato + "\nnome: " + nome + "\nemail: " + email + "\ntelefone: " + telefone;
+		return "Numero do ID: " + idContato +  "\nemail: " + email + "\ntelefone: " + telefone;
 	}
 	
 	

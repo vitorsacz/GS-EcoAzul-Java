@@ -19,9 +19,6 @@ public class ContatoSelecionar {
 		System.out.println("Informe o ID: ");
 		String idContato = scanner.nextLine();
 
-		System.out.println("Informe o nome: ");
-		String nome = scanner.nextLine();
-
 		System.out.println("Informe o seu Email: ");
 		String email = scanner.nextLine();
 
@@ -31,7 +28,6 @@ public class ContatoSelecionar {
 		Contato contato = new Contato();
 
 		contato.setIdContato(idContato);
-		contato.setNome(nome);
 		contato.setEmail(email);
 		contato.setTelefone(telefone);
 

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 import br.com.economiaazul.dao.EnderecoDAO;
-import br.com.economiaazul.model.Endereco;
+import br.com.economiaazul.beans.Endereco;
 
 public class EnderecoDeletar {
 	
@@ -23,7 +23,7 @@ public class EnderecoDeletar {
 		Endereco endereco = new Endereco();
 
 		endereco.setIdEndereco(id);
-	
+
 		try {
 			EnderecoDAO enderecoDAO = new EnderecoDAO();
 			String resultado = enderecoDAO.deletar(endereco);
@@ -34,7 +34,7 @@ public class EnderecoDeletar {
 		}
 		return endereco;
 
-		
+
 	}
 	
 }

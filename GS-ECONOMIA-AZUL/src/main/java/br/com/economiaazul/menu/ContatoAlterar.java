@@ -18,9 +18,6 @@ public class ContatoAlterar {
 		System.out.println("-------CONTATO-----");
 		System.out.println("====================\n");
 
-		System.out.println("Informe o nome: ");
-		String nome = scanner.nextLine();
-
 		System.out.println("Informe o seu Email: ");
 		String email = scanner.nextLine();
 
@@ -32,7 +29,6 @@ public class ContatoAlterar {
 
 		Contato contato = new Contato();
 
-		contato.setNome(nome);
 		contato.setEmail(email);
 		contato.setTelefone(telefone);
 		contato.setIdContato(idContato);

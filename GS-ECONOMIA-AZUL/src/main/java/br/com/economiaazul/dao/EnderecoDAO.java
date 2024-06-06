@@ -5,11 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import br.com.economiaazul.beans.Contato;
 import br.com.economiaazul.conexao.ConnectFactory;
 import br.com.economiaazul.exceptions.DatabaseException;
 import br.com.economiaazul.exceptions.EnderecoDatabase;
-import br.com.economiaazul.model.Endereco;
+import br.com.economiaazul.beans.Endereco;
 
 public class EnderecoDAO {
     
@@ -24,15 +23,16 @@ public class EnderecoDAO {
         PreparedStatement statement;
         try {
         	statement = minhaConexao.prepareStatement(
-                    "INSERT INTO t_gs_endereco(idEndereco, cep, lougradouro, bairro, localidade, uf) " +
-                    "VALUES (?, ?, ?, ?, ?, ?)");
+                    "INSERT INTO t_gs_endereco(idEndereco, cep, lougradouro, complemento, bairro, localidade, uf) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?)");
             
         	statement.setString(1, endereco.getIdEndereco());
         	statement.setString(2, endereco.getCep());
         	statement.setString(3, endereco.getLougradouro());
-        	statement.setString(4, endereco.getBairro());
-        	statement.setString(5, endereco.getLocalidade());
-        	statement.setString(6, endereco.getUf());
+        	statement.setString(4, endereco.getComplemento());
+			statement.setString(5, endereco.getBairro());
+			statement.setString(6, endereco.getLocalidade());
+            statement.setString(7, endereco.getUf());
         	statement.execute();
         	statement.close();
 
@@ -60,21 +60,22 @@ public class EnderecoDAO {
 			throw new DatabaseException("Erro ao deletar contato", e);
 		}
 	}
-	
+
 	
 	public String alterar(Endereco endereco) throws DatabaseException {
 		PreparedStatement statement;
 		try {
 			statement = minhaConexao
-					.prepareStatement("update t_gs_endereco set cep = ?, lougradouro = ?, bairro = ?, localidade = ?, uf = ? where idEndereco = ?");
+					.prepareStatement("update t_gs_endereco set cep = ?, lougradouro = ?, complemento = ? , bairro = ?, localidade = ?, uf = ? where idEndereco = ?");
 
 			statement.setString(1, endereco.getCep());
 			statement.setString(2, endereco.getLougradouro());
-			statement.setString(3, endereco.getBairro());
-			statement.setString(4, endereco.getLocalidade());
-			statement.setString(5, endereco.getUf());
-			statement.setString(6, endereco.getIdEndereco());
-			
+			statement.setString(3, endereco.getComplemento());
+			statement.setString(4, endereco.getBairro());
+			statement.setString(5, endereco.getLocalidade());
+			statement.setString(6, endereco.getUf());
+			statement.setString(7, endereco.getIdEndereco());
+
 
 			int Updated = statement.executeUpdate();
 			statement.close();
@@ -103,6 +104,7 @@ public class EnderecoDAO {
 				endereco.setIdEndereco(resultSet.getString("idEndereco"));
 				endereco.setCep(resultSet.getString("cep"));
 				endereco.setLougradouro(resultSet.getString("lougradouro"));
+				endereco.setComplemento(resultSet.getString("complemento"));
 				endereco.setBairro(resultSet.getString("bairro"));
 				endereco.setLocalidade(resultSet.getString("locaidade"));
 				endereco.setUf(resultSet.getString("uf"));

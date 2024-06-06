@@ -1,13 +1,10 @@
 package br.com.economiaazul.menu;
 
 import java.util.Scanner;
-import java.util.UUID;
 
-import br.com.economiaazul.dao.ContatoDAO;
 import br.com.economiaazul.dao.EnderecoDAO;
 import br.com.economiaazul.exceptions.DatabaseException;
-import br.com.economiaazul.model.Endereco;
-import br.com.economiaazul.service.ViaCepService;
+import br.com.economiaazul.beans.Endereco;
 
 public class EnderecoSelecionar {
 
@@ -21,7 +18,7 @@ public class EnderecoSelecionar {
 
 		System.out.println("Informe o id: ");
 		String idEndereco = scanner.nextLine();
-		
+
 		System.out.println("Informe o cep: ");
 		String cep = scanner.nextLine();
 
@@ -30,7 +27,7 @@ public class EnderecoSelecionar {
 
 		endereco.setIdEndereco(idEndereco);
 		endereco.setCep(cep);
-	
+
 
 		try {
 			EnderecoDAO enderecoDAO = new EnderecoDAO();
@@ -45,7 +42,7 @@ public class EnderecoSelecionar {
 			System.out.println("ERRO AO SELECIONAR CONTATO: " + e.getMessage());
 		}
 
-		
+
 		System.out.println("\n" + endereco.toString());
 
 		return endereco;

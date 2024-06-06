@@ -9,7 +9,7 @@ import org.apache.http.util.EntityUtils;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import br.com.economiaazul.model.Endereco;
+import br.com.economiaazul.beans.Endereco;
 
 public class ViaCepService {
 
@@ -39,10 +39,10 @@ public class ViaCepService {
             Endereco endereco = new Endereco();
             endereco.setCep(cep);
             endereco.setLougradouro(jsonObject.get("logradouro").getAsString());
+            endereco.setComplemento(jsonObject.get("complemento").getAsString());
             endereco.setBairro(jsonObject.get("bairro").getAsString());
             endereco.setLocalidade(jsonObject.get("localidade").getAsString());
             endereco.setUf(jsonObject.get("uf").getAsString());
-            
             return endereco;
         }
     }

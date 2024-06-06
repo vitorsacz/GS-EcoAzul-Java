@@ -22,12 +22,11 @@ public class ContatoDAO {
 		PreparedStatement statement;
 		try {
 			statement = minhaConexao.prepareStatement(
-					"insert into t_gs_contato(idContato, nome, email, telefone) " + "values (?, ?, ?, ?)");
+					"insert into t_gs_contato(idContato, email, telefone) " + "values (?, ?, ?)");
 
 			statement.setString(1, contato.getIdContato());
-			statement.setString(2, contato.getNome());
-			statement.setString(3, contato.getEmail());
-			statement.setString(4, contato.getTelefone());
+			statement.setString(2, contato.getEmail());
+			statement.setString(3, contato.getTelefone());
 			statement.execute();
 			statement.close();
 
@@ -59,12 +58,11 @@ public class ContatoDAO {
 		PreparedStatement statement;
 		try {
 			statement = minhaConexao
-					.prepareStatement("update t_gs_contato set nome = ?, email = ?, telefone = ? where idContato = ?");
+					.prepareStatement("update t_gs_contato set email = ?, telefone = ? where idContato = ?");
 
-			statement.setString(1, contato.getNome());
-			statement.setString(2, contato.getEmail());
-			statement.setString(3, contato.getTelefone());
-			statement.setString(4, contato.getIdContato());
+			statement.setString(1, contato.getEmail());
+			statement.setString(2, contato.getTelefone());
+			statement.setString(3, contato.getIdContato());
 
 			int Updated = statement.executeUpdate();
 			statement.close();
@@ -90,7 +88,6 @@ public class ContatoDAO {
 			if (resultSet.next()) {
 				Contato contato = new Contato();
 				contato.setIdContato(resultSet.getString("idContato"));
-				contato.setNome(resultSet.getString("nome"));
 				contato.setEmail(resultSet.getString("email"));
 				contato.setTelefone(resultSet.getString("telefone"));
 				resultSet.close();

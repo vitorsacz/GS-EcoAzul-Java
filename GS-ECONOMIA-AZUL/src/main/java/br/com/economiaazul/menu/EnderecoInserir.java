@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.UUID;
 
 import br.com.economiaazul.dao.EnderecoDAO;
-import br.com.economiaazul.model.Endereco;
+import br.com.economiaazul.beans.Endereco;
 import br.com.economiaazul.service.ViaCepService;
 
 public class EnderecoInserir {
@@ -31,9 +31,10 @@ public class EnderecoInserir {
         try {
             Endereco enderecoVia = viaCepService.getContatoUsuario(cep);
             endereco.setLougradouro(enderecoVia.getLougradouro());
-            endereco.setBairro(enderecoVia.getBairro());
+			endereco.setComplemento(enderecoVia.getComplemento());
+			endereco.setBairro(enderecoVia.getBairro());
             endereco.setLocalidade(enderecoVia.getLocalidade());
-            endereco.setUf(enderecoVia.getUf());
+			endereco.setUf(enderecoVia.getUf());
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("ERRO AO CONSULTAR O CEP");
