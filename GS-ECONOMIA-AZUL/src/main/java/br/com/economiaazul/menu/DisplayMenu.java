@@ -15,6 +15,8 @@ public class DisplayMenu implements Display {
         opcoesMenu.add("[ 2 ] - Endereco");
         opcoesMenu.add("[ 3 ] - Ong");
         opcoesMenu.add("[ 4 ] - Praias");
+        opcoesMenu.add("[ 5 ] - Plastico Produzido");
+        opcoesMenu.add("[ 6 ] - Qualidade");
 
         Boolean exibindoMenu = true;
 
@@ -52,6 +54,17 @@ public class DisplayMenu implements Display {
                 case "4":
                     PraiasInserir praiasInserir = new PraiasInserir();
                     praiasInserir.exibirMenu();
+                    break;
+
+                case "5":
+                    PlasticoInserir plasticoInserir = new PlasticoInserir();
+                    plasticoInserir.exibirMenu();
+                    break;
+
+                case "6":
+                    QualidadeInserir qualidadeInserir = new QualidadeInserir();
+                    qualidadeInserir.exibirMenu();
+                    break;
 
                 default:
                     break;
